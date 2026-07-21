@@ -126,6 +126,21 @@ export default function EquipePage() {
                 </span>
               ))}
             </div>
+
+            {/* Botão de WhatsApp de Nani (Clínica) */}
+            <div className="pt-4">
+              <a
+                href="https://wa.me/5551985426371?text=Ol%C3%A1%21%20Encontrei%20seu%20contato%20pelo%20site%20da%20cl%C3%ADnica%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20atendimentos."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-[#25D366] text-white hover:bg-[#20bd5a] transition-colors shadow-xs hover:shadow-md active:scale-95"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M12.012 2c-5.508 0-9.987 4.479-9.987 9.988 0 1.76.459 3.477 1.334 4.992l-1.417 5.176 5.297-1.389c1.464.799 3.119 1.22 4.773 1.22h.004c5.507 0 9.986-4.479 9.986-9.988 0-2.668-1.039-5.176-2.926-7.063s-4.395-2.931-7.064-2.931zm5.834 14.364c-.244.686-1.423 1.31-1.956 1.391-.497.075-1.139.108-1.841-.116-.426-.135-.972-.313-1.687-.623-2.973-1.288-4.908-4.298-5.056-4.496-.148-.198-1.205-1.603-1.205-3.058 0-1.455.762-2.171 1.032-2.464.27-.293.589-.366.786-.366.197 0 .394.002.564.01.182.008.427-.069.667.508.246.592.836 2.039.909 2.188.074.148.123.321.025.518-.099.198-.148.321-.295.494-.148.173-.31.388-.443.52-.148.148-.303.309-.13.606.173.297.768 1.267 1.647 2.049 1.131 1.006 2.083 1.318 2.38 1.466.297.148.47.123.644-.074.173-.198.746-.867.943-1.164.198-.297.394-.247.665-.148.271.099 1.72.811 2.016.958.296.148.493.222.566.346.074.123.074.714-.17 1.401z" />
+                </svg>
+                <span>Falar com Nani (WhatsApp)</span>
+              </a>
+            </div>
           </div>
         </div>
       </SectionWrapper>
@@ -180,7 +195,7 @@ export default function EquipePage() {
             </div>
 
             {/* Tags Pedro */}
-            <div className="pt-3 flex flex-wrap gap-2 border-t border-[#F0EFE8]">
+            <div className="pt-3 flex flex-wrap gap-2 border-t border-[#F0EFE8] mb-4">
               {pedroTags.map((tag, i) => (
                 <span
                   key={i}
@@ -189,6 +204,21 @@ export default function EquipePage() {
                   {tag}
                 </span>
               ))}
+            </div>
+
+            {/* WhatsApp do Pedro */}
+            <div className="flex justify-center">
+              <a
+                href="https://wa.me/?text=Ol%C3%A1%21%20Encontrei%20seu%20contato%20pelo%20site%20da%20cl%C3%ADnica%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20atendimentos."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-[#25D366] text-white hover:bg-[#20bd5a] transition-colors shadow-xs hover:shadow-md active:scale-95 w-full justify-center"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M12.012 2c-5.508 0-9.987 4.479-9.987 9.988 0 1.76.459 3.477 1.334 4.992l-1.417 5.176 5.297-1.389c1.464.799 3.119 1.22 4.773 1.22h.004c5.507 0 9.986-4.479 9.986-9.988 0-2.668-1.039-5.176-2.926-7.063s-4.395-2.931-7.064-2.931zm5.834 14.364c-.244.686-1.423 1.31-1.956 1.391-.497.075-1.139.108-1.841-.116-.426-.135-.972-.313-1.687-.623-2.973-1.288-4.908-4.298-5.056-4.496-.148-.198-1.205-1.603-1.205-3.058 0-1.455.762-2.171 1.032-2.464.27-.293.589-.366.786-.366.197 0 .394.002.564.01.182.008.427-.069.667.508.246.592.836 2.039.909 2.188.074.148.123.321.025.518-.099.198-.148.321-.295.494-.148.173-.31.388-.443.52-.148.148-.303.309-.13.606.173.297.768 1.267 1.647 2.049 1.131 1.006 2.083 1.318 2.38 1.466.297.148.47.123.644-.074.173-.198.746-.867.943-1.164.198-.297.394-.247.665-.148.271.099 1.72.811 2.016.958.296.148.493.222.566.346.074.123.074.714-.17 1.401z" />
+                </svg>
+                <span>Falar com Pedro</span>
+              </a>
             </div>
           </Card>
 
@@ -233,7 +263,7 @@ export default function EquipePage() {
             </div>
 
             {/* Tags Natália */}
-            <div className="pt-3 flex flex-wrap gap-2 border-t border-[#F0EFE8]">
+            <div className="pt-3 flex flex-wrap gap-2 border-t border-[#F0EFE8] mb-4">
               {nataliaTags.map((tag, i) => (
                 <span
                   key={i}
@@ -242,6 +272,21 @@ export default function EquipePage() {
                   {tag}
                 </span>
               ))}
+            </div>
+
+            {/* WhatsApp da Natália */}
+            <div className="flex justify-center">
+              <a
+                href="https://wa.me/?text=Ol%C3%A1%21%20Encontrei%20seu%20contato%20pelo%20site%20da%20cl%C3%ADnica%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20atendimentos."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-[#25D366] text-white hover:bg-[#20bd5a] transition-colors shadow-xs hover:shadow-md active:scale-95 w-full justify-center"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M12.012 2c-5.508 0-9.987 4.479-9.987 9.988 0 1.76.459 3.477 1.334 4.992l-1.417 5.176 5.297-1.389c1.464.799 3.119 1.22 4.773 1.22h.004c5.507 0 9.986-4.479 9.986-9.988 0-2.668-1.039-5.176-2.926-7.063s-4.395-2.931-7.064-2.931zm5.834 14.364c-.244.686-1.423 1.31-1.956 1.391-.497.075-1.139.108-1.841-.116-.426-.135-.972-.313-1.687-.623-2.973-1.288-4.908-4.298-5.056-4.496-.148-.198-1.205-1.603-1.205-3.058 0-1.455.762-2.171 1.032-2.464.27-.293.589-.366.786-.366.197 0 .394.002.564.01.182.008.427-.069.667.508.246.592.836 2.039.909 2.188.074.148.123.321.025.518-.099.198-.148.321-.295.494-.148.173-.31.388-.443.52-.148.148-.303.309-.13.606.173.297.768 1.267 1.647 2.049 1.131 1.006 2.083 1.318 2.38 1.466.297.148.47.123.644-.074.173-.198.746-.867.943-1.164.198-.297.394-.247.665-.148.271.099 1.72.811 2.016.958.296.148.493.222.566.346.074.123.074.714-.17 1.401z" />
+                </svg>
+                <span>Falar com Natália</span>
+              </a>
             </div>
           </Card>
         </div>
