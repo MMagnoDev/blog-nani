@@ -13,24 +13,28 @@ export default function BlogPage() {
       excerpt: "Como identificar quando mudanças comportamentais em crianças exigem atenção profissional e suporte terapêutico.",
       category: "Infância",
       date: "14 Julho 2026",
+      image: "/img/blog/saude_mental_infancia.png",
     },
     {
       title: "Parentalidade Consciente: O que é?",
       excerpt: "Estratégias para exercer a maternidade e paternidade com maior presença, empatia e alinhamento emocional.",
       category: "Parentalidade",
       date: "02 Julho 2026",
+      image: "/img/blog/parentalidade_consciente.png",
     },
     {
       title: "Ansiedade e Autocuidado no Dia a Dia",
       excerpt: "Pequenas práticas diárias que auxiliam no manejo dos sintomas de ansiedade e promovem paz interior.",
       category: "Bem-Estar",
       date: "20 Junho 2026",
+      image: "/img/blog/ansiedade_autocuidado.png",
     },
     {
       title: "Neurodiversidade: Compreendendo o TEA",
       excerpt: "Um olhar integrado e acolhedor sobre o Transtorno do Espectro Autista e a importância da intervenção precoce.",
       category: "Neurodiversidade",
       date: "10 Junho 2026",
+      image: "/img/blog/neurodiversidade_tea.png",
     },
   ];
 
@@ -60,8 +64,11 @@ export default function BlogPage() {
             <Card key={i} className="h-full p-5 sm:p-6 flex flex-col justify-between">
               <div>
                 <PlaceholderImage
+                  src={post.image}
+                  alt={post.title}
                   aspectRatio="aspect-[16/9]"
-                  rounded="rounded-xl"
+                  shapeVariant="standard"
+                  rounded="16px"
                   label={`Capa Artigo ${i + 1}`}
                   className="mb-5 sm:mb-6"
                 />

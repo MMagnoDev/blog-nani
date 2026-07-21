@@ -47,16 +47,17 @@ export default function CTASection({
         )}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3.5 sm:gap-4 mt-6">
           <Button
-            href="https://wa.me/5551999999999"
+            href="https://wa.me/5551985426371?text=Ol%C3%A1%21%20Gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20atendimentos%20da%20Clover%20Psicologia."
             variant="primary"
-            className="w-full sm:w-auto px-6 sm:px-8 py-3.5 bg-white text-[#6F7A69] hover:bg-white/90 hover:shadow-lg transition-all duration-300 font-medium text-xs sm:text-sm border-0"
+            className="w-full sm:w-auto px-6 sm:px-8 py-3.5 !bg-white !text-[#495045] hover:!bg-white/90 hover:shadow-lg transition-all duration-300 font-medium text-xs sm:text-sm border-0"
+            style={{ color: "#495045", backgroundColor: "#ffffff" }}
           >
             {buttonTextPrimary}
           </Button>
           <Button
-            href="mailto:contato@cloverpsicologia.com.br"
+            href="mailto:cloverpsicologia@gmail.com"
             variant="outline"
-            className="w-full sm:w-auto px-6 sm:px-8 py-3.5 border border-white text-white bg-white/20 hover:bg-white/30 hover:shadow-lg transition-all duration-300 font-medium text-xs sm:text-sm"
+            className="w-full sm:w-auto px-6 sm:px-8 py-3.5 border border-white !text-white bg-white/20 hover:bg-white/30 hover:shadow-lg transition-all duration-300 font-medium text-xs sm:text-sm"
           >
             {buttonTextSecondary}
           </Button>

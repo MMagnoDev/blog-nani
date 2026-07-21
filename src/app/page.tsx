@@ -3,25 +3,29 @@ import SectionWrapper from "@/components/SectionWrapper";
 import Button from "@/components/Button";
 import Card from "@/components/Card";
 import PlaceholderImage from "@/components/PlaceholderImage";
+import GalleryLightbox from "@/components/GalleryLightbox";
 import CTASection from "@/components/CTASection";
-import { ArrowRight, User } from "lucide-react";
+import { ArrowRight, Heart, Users, Shield } from "lucide-react";
 
 export default function HomePage() {
   const serviciosData = [
     {
       title: "Psicoterapia Infantil",
       description:
-        "Espaço lúdico e seguro para crianças expressarem suas emoções e superarem desafios do desenvolvimento.",
+        "Espaço lúdico para expressão de emoções e desenvolvimento socioemocional.",
+      icon: Heart,
     },
     {
       title: "Psicoterapia Adulto",
       description:
-        "Acolhimento para questões emocionais, ansiedade, autoconhecimento e desenvolvimento pessoal.",
+        "Acolhimento para questões pessoais, fortalecimento emocional e busca de equilíbrio.",
+      icon: Users,
     },
     {
       title: "Avaliação Psicológica",
       description:
-        "Investigação detalhada e diagnóstica para orientar tratamentos e condutas de forma precisa.",
+        "Processos avaliativos com ética e precisão técnica para diagnóstico.",
+      icon: Shield,
     },
   ];
 
@@ -29,22 +33,26 @@ export default function HomePage() {
     {
       number: "1",
       title: "Equipe multidisciplinar especializada",
-      description: "Profissionais experientes e em constante atualização científica.",
+      description:
+        "Profissionais de diferentes áreas, unidos para oferecer um cuidado mais completo, integrado e humanizado.",
     },
     {
       number: "2",
       title: "Ambiente acolhedor e seguro",
-      description: "Salas preparadas para garantir conforto e total privacidade.",
+      description:
+        "Um espaço pensado para transmitir conforto, confiança e tranquilidade em cada atendimento.",
     },
     {
       number: "3",
       title: "Atendimento ético e personalizado",
-      description: "Planos terapêuticos adaptados às reais necessidades de cada pessoa.",
+      description:
+        "Cada paciente é acolhido com escuta, respeito e atenção às suas necessidades individuais.",
     },
     {
       number: "4",
       title: "Localização central em Canoas",
-      description: "Espaço de fácil acesso, com conveniência e tranquilidade.",
+      description:
+        "Fácil acesso para tornar o cuidado com a saúde mental mais prático na rotina.",
     },
   ];
 
@@ -89,7 +97,7 @@ export default function HomePage() {
             {/* DIREITA */}
             <div className="relative group">
               <PlaceholderImage
-                src="/img/perfil_hero.jpg"
+                src="/img/img_hero.png"
                 alt="Equipe Clover Psicologia"
                 aspectRatio="aspect-[4/3]"
                 shapeVariant="diagonal-left"
@@ -101,17 +109,27 @@ export default function HomePage() {
       </section>
 
       {/* FRASE DE IMPACTO */}
-      <section className="py-10 sm:py-16 bg-[#AEB5A3]/15 border-y border-[#E5E4DB] text-center relative z-10">
+      <section className="py-12 sm:py-16 bg-[#AEB5A3]/15 border-y border-[#E5E4DB] text-center relative z-10">
         <div className="max-w-[900px] mx-auto px-4 sm:px-6 space-y-3 sm:space-y-4">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 mx-auto rounded-full bg-[#FAF9F1] border border-[#6F7A69]/40 flex items-center justify-center text-[#6F7A69] shadow-xs">
-            <svg className="w-4 h-4 sm:w-5 sm:h-5 fill-current" viewBox="0 0 24 24">
-              <path d="M12 2C9.5 2 7.5 4 7.5 6.5C7.5 8.5 9 10 10.5 11C9 12 7.5 13.5 7.5 15.5C7.5 18 9.5 20 12 20C14.5 20 16.5 18 16.5 15.5C16.5 13.5 15 12 13.5 11C15 10 16.5 8.5 16.5 6.5C16.5 4 14.5 2 12 2Z" opacity="0.3"/>
-              <path d="M12 4A4 4 0 1 0 12 12A4 4 0 1 0 12 4Z" fill="currentColor"/>
-            </svg>
+          {/* Logo cursiva/símbolo da marca */}
+          <div className="flex justify-center">
+            <img
+              src="/logo_background.png"
+              alt="Clover Psicologia"
+              className="h-10 sm:h-14 md:h-16 w-auto object-contain mix-blend-multiply opacity-80"
+            />
           </div>
-          <p className="font-serif text-lg sm:text-2xl md:text-4xl italic text-[#495045] leading-relaxed font-normal">
-            “Escutar é também oferecer presença. Cuidar da mente é também se permitir ser escutado.”
-          </p>
+          <div className="relative">
+            <p className="font-serif text-lg sm:text-2xl md:text-3xl lg:text-4xl italic text-[#495045] leading-relaxed font-normal">
+              <span className="text-3xl sm:text-5xl md:text-6xl text-[#6F7A69]/40 font-serif not-italic inline-block align-sub -mr-1 sm:-mr-2 select-none">
+                “
+              </span>
+              Escutar é também oferecer presença. Cuidar da mente é também se permitir ser escutado.
+              <span className="text-3xl sm:text-5xl md:text-6xl text-[#6F7A69]/40 font-serif not-italic inline-block align-sub -ml-1 sm:-ml-2 select-none">
+                ”
+              </span>
+            </p>
+          </div>
         </div>
       </section>
 
@@ -133,7 +151,7 @@ export default function HomePage() {
               NOSSOS SERVIÇOS
               <span className="w-6 sm:w-8 h-[1px] bg-[#6F7A69]/40" />
             </div>
-            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-[#495045]">
+            <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl font-semibold text-[#495045] tracking-tight">
               Cuidado Integral para <br className="hidden sm:inline" /> Todas as Fases
             </h2>
             <p className="text-xs sm:text-sm text-[#787F74] font-light max-w-xl mx-auto leading-relaxed">
@@ -142,31 +160,40 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-            {serviciosData.map((service, idx) => (
-              <Card key={idx} className="h-full flex flex-col justify-between group hover:-translate-y-1.5 transition-all duration-300 p-6 sm:p-8 bg-white/95 backdrop-blur-xs">
-                <div>
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#FAF9F1] border border-[#E5E4DB] flex items-center justify-center text-[#6F7A69] mb-5 sm:mb-6 group-hover:bg-[#6F7A69] group-hover:text-white transition-colors duration-300">
-                    <User size={20} />
+            {serviciosData.map((service, idx) => {
+              const IconComp = service.icon;
+              return (
+                <Card
+                  key={idx}
+                  className="h-full flex flex-col justify-between group hover:-translate-y-1.5 transition-all duration-300 p-6 sm:p-8 bg-white backdrop-blur-xs rounded-2xl shadow-sm border border-[#EAE8DD]"
+                >
+                  <div>
+                    <div className="w-11 h-11 rounded-xl bg-[#F5F4EE] flex items-center justify-center text-[#556151] mb-5 sm:mb-6">
+                      <IconComp size={20} strokeWidth={1.75} />
+                    </div>
+                    <div className="border-l-2 border-[#556151] pl-3 mb-3">
+                      <h3 className="font-sans text-lg sm:text-xl font-semibold text-[#3D4439]">
+                        {service.title}
+                      </h3>
+                    </div>
+                    <p className="text-xs sm:text-sm text-[#787F74] leading-relaxed font-light mb-6">
+                      {service.description}
+                    </p>
                   </div>
-                  <h3 className="font-serif text-xl sm:text-2xl font-semibold text-[#495045] mb-2.5 sm:mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#787F74] leading-relaxed font-light mb-6">
-                    {service.description}
-                  </p>
-                </div>
-                <div>
-                  <Button
-                    href="/especialidades"
-                    variant="outline"
-                    className="w-full justify-between group-hover:border-[#6F7A69] py-2.5 text-xs"
-                  >
-                    <span>Saiba mais</span>
-                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </div>
-              </Card>
-            ))}
+                  <div>
+                    <Button
+                      href="/especialidades"
+                      variant="primary"
+                      className="inline-flex items-center gap-1.5 px-5 py-2.5 text-xs font-medium !bg-[#556151] !text-white hover:!bg-[#475243] border-0 rounded-full shadow-xs"
+                      style={{ backgroundColor: "#556151", color: "#ffffff" }}
+                    >
+                      <span>Saiba mais</span>
+                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </div>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -190,9 +217,11 @@ export default function HomePage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* ESQUERDA */}
           <PlaceholderImage
+            src="/img/nossa-equipe.png"
+            alt="Nani Adriana Hutton Iochins"
             aspectRatio="aspect-[4/5]"
             shapeVariant="diagonal-right"
-            label="Foto Nani Adriana Hutton Iochins"
+            label="Nani Adriana Hutton Iochins"
             className="min-h-[280px] sm:min-h-[360px] md:min-h-[420px]"
           />
 
@@ -238,7 +267,12 @@ export default function HomePage() {
             </div>
 
             <div className="pt-2">
-              <Button href="/quem-somos" variant="primary" className="w-full sm:w-auto gap-2 text-xs sm:text-sm">
+              <Button
+                href="/quem-somos"
+                variant="primary"
+                className="w-full sm:w-auto gap-2 text-xs sm:text-sm !bg-[#556151] !text-white hover:!bg-[#475243] border-0 rounded-full shadow-xs"
+                style={{ backgroundColor: "#556151", color: "#ffffff" }}
+              >
                 Conheça nossa equipe completa <ArrowRight size={16} />
               </Button>
             </div>
@@ -258,27 +292,15 @@ export default function HomePage() {
             Um Ambiente Acolhedor
           </h2>
           <p className="text-xs sm:text-sm text-[#787F74] font-light max-w-xl mx-auto leading-relaxed">
-            Conheça nossa clínica, preparada para oferecer o máximo conforto, segurança e privacidade.
+            Conheça o espaço que preparamos com todo carinho para receber você.
           </p>
         </div>
 
-        {/* Grid 3x3 Placeholders com efeito zoom no hover */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10">
-          {Array.from({ length: 9 }).map((_, i) => (
-            <div key={i} className="group overflow-hidden rounded-2xl">
-              <PlaceholderImage
-                aspectRatio="aspect-[4/3]"
-                shapeVariant="standard"
-                label={`Espaço ${i + 1}`}
-                rounded="rounded-2xl"
-                className="transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-          ))}
-        </div>
+        {/* Galeria Interativa com Lightbox e Hover de Titulo */}
+        <GalleryLightbox />
 
         <div className="text-center">
-          <Button href="/quem-somos" variant="outline" className="w-full sm:w-auto text-xs sm:text-sm">
+          <Button href="/nosso-espaco" variant="outline" className="w-full sm:w-auto text-xs sm:text-sm">
             Ver Galeria Completa
           </Button>
         </div>
@@ -311,7 +333,7 @@ export default function HomePage() {
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#B9C1AE]/20 font-serif text-xl sm:text-2xl font-semibold text-[#6F7A69] flex items-center justify-center mb-4 group-hover:bg-[#6F7A69] group-hover:text-white transition-colors duration-300">
                   {item.number}
                 </div>
-                <h3 className="font-serif text-lg sm:text-xl font-semibold text-[#495045] mb-2">
+                <h3 className="font-sans text-base sm:text-lg font-semibold text-[#3D4439] mb-2 leading-snug">
                   {item.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-[#787F74] font-light leading-relaxed">

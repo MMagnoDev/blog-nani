@@ -5,9 +5,10 @@ interface ButtonProps {
   children: React.ReactNode;
   variant?: "primary" | "outline";
   href?: string;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
   className?: string;
   type?: "button" | "submit" | "reset";
+  style?: React.CSSProperties;
 }
 
 export default function Button({
@@ -17,6 +18,7 @@ export default function Button({
   onClick,
   className = "",
   type = "button",
+  style,
 }: ButtonProps) {
   const baseStyles =
     "inline-flex items-center justify-center px-6 py-3 rounded-full font-medium transition-all duration-300 text-sm tracking-wide shadow-xs hover:shadow-md active:scale-95";
@@ -30,14 +32,14 @@ export default function Button({
 
   if (href) {
     return (
-      <Link href={href} className={combinedClasses}>
+      <Link href={href} onClick={onClick} className={combinedClasses} style={style}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button type={type} onClick={onClick} className={combinedClasses}>
+    <button type={type} onClick={onClick} className={combinedClasses} style={style}>
       {children}
     </button>
   );

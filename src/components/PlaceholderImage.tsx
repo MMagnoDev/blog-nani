@@ -8,39 +8,58 @@ interface PlaceholderImageProps {
   label?: string;
   shapeVariant?: "diagonal-left" | "diagonal-right" | "standard";
   rounded?: string;
+  children?: React.ReactNode;
 }
 
 export default function PlaceholderImage({
   src,
   alt = "Imagem Clover",
-  aspectRatio = "aspect-square",
+  aspectRatio = "aspect-[4/3]",
   className = "",
   label = "Imagem Placeholder",
-  shapeVariant = "diagonal-right",
+  shapeVariant = "diagonal-left",
   rounded,
+  children,
 }: PlaceholderImageProps) {
-  const shapeClasses = {
-    "diagonal-left": "rounded-[40px_14px_40px_14px]",
-    "diagonal-right": "rounded-[14px_40px_14px_40px]",
-    standard: rounded || "rounded-xl",
-  };
+  // Diagonal leaf design with exact sharp 0px corners ("pontas pontudas"):
+  // diagonal-left: Top-Left=40px, Top-Right=0px (pointy), Bottom-Right=40px, Bottom-Left=0px (pointy)
+  // diagonal-right: Top-Left=0px (pointy), Top-Right=40px, Bottom-Right=0px (pointy), Bottom-Left=40px
+  let outerBorderRadius = "40px 0px 40px 0px";
+  let innerBorderRadius = "32px 0px 32px 0px";
 
-  const innerRadiusClass = shapeClasses[shapeVariant];
+  if (shapeVariant === "diagonal-right") {
+    outerBorderRadius = "0px 40px 0px 40px";
+    innerBorderRadius = "0px 32px 0px 32px";
+  } else if (shapeVariant === "standard") {
+    outerBorderRadius = rounded || "16px";
+    innerBorderRadius = "10px";
+  }
 
   return (
+    /* Outer card — white frame with clean rounded corners */
     <div
-      className={`pt-2.5 px-2.5 pb-4 bg-white ${innerRadiusClass} shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-[#E5E4DB] ${className}`}
+      className={`bg-white shadow-[0_6px_24px_rgba(0,0,0,0.07)] border border-white/80 block w-full`}
+      style={{
+        borderRadius: outerBorderRadius,
+        padding: "6px",
+      }}
     >
-      <div className={`relative w-full ${aspectRatio} ${innerRadiusClass} overflow-hidden`}>
+      {/* Inner image container */}
+      <div
+        className={`relative w-full ${aspectRatio} overflow-hidden ${className}`}
+        style={{
+          borderRadius: innerBorderRadius,
+        }}
+      >
         {src ? (
           <img
             src={src}
             alt={alt}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object-cover object-center"
           />
         ) : (
-          <div className="w-full h-full bg-[#EAE8DD]/70 flex flex-col items-center justify-center p-4 text-center shadow-inner">
-            <div className="w-10 h-10 rounded-full bg-[#FAF9F1] flex items-center justify-center mb-2 shadow-xs group-hover:scale-105 transition-transform duration-300">
+          <div className="w-full h-full bg-[#EAE8DD]/70 flex flex-col items-center justify-center p-4 text-center">
+            <div className="w-10 h-10 rounded-full bg-[#FAF9F1] flex items-center justify-center mb-2 shadow-sm">
               <svg
                 className="w-5 h-5 text-[#6F7A69]"
                 fill="none"
@@ -60,7 +79,11 @@ export default function PlaceholderImage({
             </span>
           </div>
         )}
+        {children}
       </div>
     </div>
   );
 }
+
+
+

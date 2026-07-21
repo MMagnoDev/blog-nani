@@ -3,7 +3,7 @@ import React from "react";
 export default function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/5551999999999"
+      href="https://wa.me/5551985426371?text=Ol%C3%A1%21%20Gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20atendimentos%20da%20Clover%20Psicologia."
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 group"
